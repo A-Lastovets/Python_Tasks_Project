@@ -1,5 +1,3 @@
-import math
-
 #Task 1: Working with Integers
 # num = int(input("Enter num: "))
 num = 15
