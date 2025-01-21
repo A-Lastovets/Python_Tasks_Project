@@ -15,6 +15,20 @@ Model: Camry
 Year: 2020
 
 '''
+#----------------------------------------------------------------------
+class Car:
+    pass
+
+my_car = Car()
+
+my_car.make = "Toyota"
+my_car.model = "Camry"
+my_car.year = 2020
+
+print(f"Make: {my_car.make}")
+print(f"Model: {my_car.model}")
+print(f"Year: {my_car.year}")
+#-----------------------------------------------------------------------
 class Car:
     def __init__(self, make, model, year):
         self.make = make
