@@ -15,3 +15,12 @@ Model: Camry
 Year: 2020
 
 '''
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+my_car = Car("Toyota", "Camry", 2020)
+
+print(f"Make: {my_car.make}\nModel: {my_car.model}\nYear: {my_car.year}")
