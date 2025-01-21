@@ -9,3 +9,18 @@ Example Output:
 
 Are they equal? True
 '''
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __eq__(self, value):
+        if isinstance(value, Person):
+            return self.name == value.name and self.age == value.age
+        return False
+    
+one_person = Person("Anton", 32)
+second_person = Person("Artem", 32)
+
+print(f"Are they equal? {one_person == second_person}")  # False
