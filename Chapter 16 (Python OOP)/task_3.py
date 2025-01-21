@@ -8,3 +8,16 @@ Example Output:
 
 Area: 50
 '''
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        result = self.width * self.height
+        return result
+
+instance = Rectangle(5, 10)
+calculate = instance.area()
+
+print(f"Width: {instance.width}\nHeight: {instance.height}\nArea: {calculate}")
