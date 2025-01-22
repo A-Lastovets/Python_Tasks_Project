@@ -22,3 +22,28 @@ Challenge:
 2. Use the iterator with the list() function, e.g., list(FibonacciIterator(7)) should output [0, 1, 1, 2, 3, 5, 8]
 
 '''
+class FibonacciIterator:
+    def __init__(self, max_value=None):
+        self.max_value = max_value
+        self.a, self.b = 0, 1 # start numbers for iteration
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.max_value is not None and self.a >= self.max_value:
+            raise StopIteration
+        result = self.a
+        self.a, self.b = self.b, self.a + self.b
+        return result
+    
+n = int(input("Please enter 'n': "))
+
+fib = FibonacciIterator(n)
+print("Expected Output:")
+for num in fib:
+    print(num)
+
+fib_list = list(FibonacciIterator(n))
+
+print(f"List Output: {fib_list}")
