@@ -11,4 +11,21 @@ Example Output:
 25
 
 '''
+def double_decorator(func):
+    def double():
+        value = func()
+        return value * 2
+    return double
 
+def add_five_decorator(func):
+    def add():
+        value = func()
+        return value + 5
+    return add
+
+@add_five_decorator
+@double_decorator
+def get_value():
+    return 10
+
+print(get_value())
