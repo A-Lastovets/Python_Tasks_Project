@@ -9,3 +9,12 @@ Example Output:
 6
 '''
 
+def make_adder(add_value):
+    def adder(number):
+        return number + add_value
+    return adder
+
+incrementer = make_adder(1)
+
+result = incrementer(5)  # 5 + 1 = 6
+print(result)
