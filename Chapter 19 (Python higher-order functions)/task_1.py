@@ -9,3 +9,9 @@ Test apply_function by passing in a simple function like lambda x: x * 3 and a v
 Example Output:
 12
 '''
+
+def apply_function(func, value):
+    return func(value)
+
+result = apply_function(lambda x: x * 3, 4)
+print(result)
