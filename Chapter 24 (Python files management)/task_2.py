@@ -10,3 +10,11 @@ Hello world! This is a file.
 Expected Output:
 The file contains 6 words.
 '''
+# Easy level
+with open("./Chapter 24 (Python files management)/sample.txt", "w") as sample:
+        sample.write("Hello world! This is a file.")
+        
+with open("./Chapter 24 (Python files management)/sample.txt", "r") as sample:
+        data = sample.read()
+        count = len(data.split())
+        print(f"The file contains {count} words")
