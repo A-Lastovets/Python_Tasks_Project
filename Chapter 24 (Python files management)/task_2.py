@@ -22,12 +22,14 @@ The file contains 6 words.
 #Next level
 def input_text():
     while True:
-        print("Wrong data: Text cannot be empty. Please try again.")
         user_input = input("Please enter your text:\n").strip()
-        break
-    with open("./Chapter 24 (Python files management)/sample2.txt", "w") as sample:
-        sample.write(user_input)
-        print("Your text has been saved to 'sample2.txt'.")
+        if not user_input:
+            print("Error: Text cannot be empty. Please try again.")
+        else:
+            with open("./Chapter 24 (Python files management)/sample2.txt", "w") as sample:
+                sample.write(user_input)
+            print("Your text has been saved to 'sample2.txt'.")
+            break
 
 def check_text():
     try:
