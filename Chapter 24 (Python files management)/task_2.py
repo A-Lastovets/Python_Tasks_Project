@@ -11,10 +11,32 @@ Expected Output:
 The file contains 6 words.
 '''
 # Easy level
-with open("./Chapter 24 (Python files management)/sample.txt", "w") as sample:
-        sample.write("Hello world! This is a file.")
+# with open("./Chapter 24 (Python files management)/sample.txt", "w") as sample:
+#         sample.write("Hello world! This is a file.")
         
-with open("./Chapter 24 (Python files management)/sample.txt", "r") as sample:
-        data = sample.read()
-        count = len(data.split())
-        print(f"The file contains {count} words")
+# with open("./Chapter 24 (Python files management)/sample.txt", "r") as sample:
+#         data = sample.read()
+#         count = len(data.split())
+#         print(f"The file contains {count} words")
+
+#Next level
+def input_text():
+    while True:
+        print("Wrong data: Text cannot be empty. Please try again.")
+        user_input = input("Please enter your text:\n").strip()
+        break
+    with open("./Chapter 24 (Python files management)/sample2.txt", "w") as sample:
+        sample.write(user_input)
+        print("Your text has been saved to 'sample2.txt'.")
+
+def check_text():
+    try:
+        with open("./Chapter 24 (Python files management)/sample2.txt", "r") as sample:
+                text = sample.read()
+        word_count = len(text.split())
+        print(f"The number of words in the file is: {word_count}")
+    except FileNotFoundError:
+         print("Error: File 'sample2.txt' not found. Please make sure to write the text first.")
+
+input_text()
+check_text()
