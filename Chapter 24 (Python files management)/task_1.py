@@ -48,8 +48,7 @@ while start:
             break
 
     with open("./Chapter 24 (Python files management)/user_info.txt", "w") as user_info:
-        for data in user_data:
-            name, age, favorite_color = user_data
+        name, age, favorite_color = user_data
         user_info.write(f"Name: {name}\nAge: {age}\nFavorite color: {favorite_color}")
 
     print(f"Thank you, {name}!\nYour file was created!")
