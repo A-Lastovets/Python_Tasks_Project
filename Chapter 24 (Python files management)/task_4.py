@@ -37,11 +37,14 @@ with open(file_name, mode="w", newline="", encoding="utf-8") as file:
 
 with open(file_name, mode="r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
+
+    student_data = list(reader)
     print("File content:")
-    for student in students:
+
+    for student in student_data:
         print(f"Name: {student['Name']}, Age: {student['Age']}, Grade: {student['Grade']}")
     
-    ages = [int(row["Age"]) for row in reader]
+    ages = [int(student["Age"]) for student in student_data]
 
 if ages:
     average_age = sum(ages) / len(ages)
