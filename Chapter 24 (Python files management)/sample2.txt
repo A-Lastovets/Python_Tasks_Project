@@ -1,0 +1,1 @@
+Open the file in read mode, count the words, and print the result.
