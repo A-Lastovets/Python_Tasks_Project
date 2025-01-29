@@ -20,20 +20,23 @@ The file contains 6 words.
 #         print(f"The file contains {count} words")
 
 #Next level
+
+PATH_TO_FILE = "./Chapter 24 (Python files management)/sample2.txt"
+
 def input_text():
     while True:
         user_input = input("Please enter your text:\n").strip()
         if not user_input:
             print("Error: Text cannot be empty. Please try again.")
         else:
-            with open("./Chapter 24 (Python files management)/sample2.txt", "w") as sample:
+            with open(PATH_TO_FILE, "w") as sample:
                 sample.write(user_input)
             print("Your text has been saved to 'sample2.txt'.")
             break
 
 def check_text():
     try:
-        with open("./Chapter 24 (Python files management)/sample2.txt", "r") as sample:
+        with open(PATH_TO_FILE, "r") as sample:
                 text = sample.read()
         word_count = len(text.split())
         print(f"The number of words in the file is: {word_count}")
